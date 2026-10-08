@@ -3,3 +3,5 @@
 pycache/
 *.pyc
 *.pyo
+artifacts/
+__pycache__/
