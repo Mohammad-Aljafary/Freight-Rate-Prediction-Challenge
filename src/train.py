@@ -22,10 +22,9 @@ from sklearn.feature_selection import SelectFromModel
 try:
     from src.evaluate import metrics, save_diagnostics, tail_metrics
     from src.features import (
-    CATEGORICAL_COLUMNS,
-    TARGET,
-    add_engineered_features,
-    catboost_feature_frame,
+        CATEGORICAL_COLUMNS,
+        TARGET,
+        add_engineered_features,
         catboost_matrices,
         chronological_split,
         load_development_data,
@@ -37,7 +36,6 @@ except ModuleNotFoundError:  # Direct execution: `uv run src/train.py`
         CATEGORICAL_COLUMNS,
         TARGET,
         add_engineered_features,
-        catboost_feature_frame,
         catboost_matrices,
         chronological_split,
         load_development_data,

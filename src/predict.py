@@ -182,7 +182,16 @@ def main() -> None:
         raise ValueError(
             "December input must contain exactly: " + ",".join(DECEMBER_COLUMNS)
         )
-    reduced_train = add_reduced_features(labelled_raw)
+    reduced_input_columns = [
+        "pickup",
+        "delivery",
+        "distance",
+        "equipment",
+        "weight",
+        DATE_COLUMN,
+        TARGET,
+    ]
+    reduced_train = add_reduced_features(labelled_raw[reduced_input_columns])
     reduced_december = add_reduced_features(december.drop(columns=["predicted_rate"]))
     reduced_features = model_feature_columns(reduced_train)
     X_reduced_train = catboost_feature_frame(reduced_train, reduced_features)
